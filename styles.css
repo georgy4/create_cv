@@ -164,9 +164,9 @@ a {
   background-color: #d7d4d8; }
 
 .transition-fade {
-  -webkit-transition: 4s;
-  -o-transition: 4s;
-  transition: 4s;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
   opacity: 1; }
 
 html.is-animating .transition-fade {
