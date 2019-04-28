@@ -1,0 +1,28 @@
+.container.flex-start
+  .main-top-container
+    .input-photo
+      label(for="upload-photo") Выберите фото
+      input#upload-photo(type="file", name="").button-photo
+    .input-top-right
+      span Игорь Петров
+
+      .item
+        label(for="date") Дата рождения:
+        input#date(type="date", name="").input-redact
+      .item
+        label(for="salary") Желаемая зарплата:
+        input#salary(type="text", name="" placeholder="50 000").input-redact
+      .item
+        label(for="grafik") Желаемый график работы:
+        select#grafik(name="").input-redact
+          option(value="Не имеет значения" selected) Не имеет значения
+          option(value="Полный рабочий день") Полный рабочий день
+          option(value="Не полный рабочий день") Не полный рабочий день
+          option(value="Свободный график") Свободный график
+      .item
+        label(for="zanatost") Занятость:
+        select#zanatost(name="").input-redact
+          option(value="Не имеет значения" selected) Не имеет значения
+          option(value="Полная занятость") Полная занятость
+          option(value="Частичная занятость") Частичная занятость
+          option(value="Удаленная работа") Удаленная работа

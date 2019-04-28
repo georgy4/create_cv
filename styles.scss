@@ -27,6 +27,7 @@ $lighten-black: rgb(52, 52, 57);
 $grey: rgb(215, 212, 216);
 $white: white;
 $background: rgb(237, 236, 241);
+$blue: rgb(142, 118, 170);
 // 
 
 @mixin logo-font {
@@ -49,6 +50,7 @@ $background: rgb(237, 236, 241);
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .container {
@@ -94,6 +96,7 @@ a {
     border-radius: 15px;
     margin-left: 20px;
     font-size: 13px;
+    padding: 0;
   }
 }
 
@@ -101,15 +104,17 @@ a {
   color: $lighten-black;
 }
 
-.start-button {
+.button {
   @include flex();
   @include logo-font();
+  padding: 10px 20px;
   letter-spacing: 1px;
   justify-content: center;
   border: none;
   outline:none;
   box-shadow: none;
   background: $red;
+  border-radius: 15px;
   color: $white;
   font-weight: 600;
   cursor: pointer;
@@ -160,10 +165,154 @@ a {
   background-color: $grey;
 }
 
-.transition-fade {
-  transition: .4s;
+// swup
+// .transition-fade {
+//   transition: .4s;
+//   opacity: 1;
+// }
+// html.is-animating .transition-fade{
+//   opacity: 0;
+// }
+
+// enter site page
+
+.login-page {
   opacity: 1;
+  transition: opacity 0.5s ease;
+  .button {
+    margin: 15px 0;
+  }  
 }
-html.is-animating .transition-fade{
-  opacity: 0;
+
+.input {
+  border: 1px solid $grey;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.login-area {
+  label, input {
+    margin: 10px 0;
+  }
+}
+
+// 3step
+
+.main-fill {
+  flex-grow: 1;
+  background-color: $background;
+  overflow: scroll;
+}
+
+.user {
+  position: relative;
+  .angle {
+    height: 10px;
+    width: auto;
+    margin: 0 5px;
+    transition: transform 0.2s linear;
+  }
+  &:hover .angle {
+    transform: rotate(180deg);
+  }
+  &:hover .profile_menu {
+    display:block;
+  }
+}
+
+a.name {
+  font-size: 18px;
+}
+
+.profile_menu {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  top: 23px;
+  padding-top: 12px;
+  right: 0px;
+  color: $lighten-black;
+  font-size: 16px;
+  li {
+    width: 180px;
+    height: 30px;
+    background: $white;
+    border: 1px solid $grey;
+    border-top: none;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 5px 10px;
+      color: $lighten-black;
+      @include flex();
+      text-align: right;
+      img {
+        height: 100%;
+        width:auto;
+      }
+    }
+    &:hover a{
+      color: $blue;
+    }
+  }
+}
+
+.input-redact {
+  border: 1px solid $background;
+  background: $background;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 18px;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  &:focus {
+    background: $white;
+    border: 1px solid $grey;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
+
+.flex-start{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.main-top-container {
+  padding: 20px 0;
+  @include flex();
+  height: 300px;
+  .input-photo {
+    height: 100%;
+    width: 200px;
+    background: $white;
+    border: 2px dashed $grey;
+    @include flex();
+    justify-content: center;
+    label {
+      text-decoration: underline dotted;
+      color: $blue;
+      cursor: pointer;
+    }
+    .button-photo {
+      display:none;
+    }
+  }
+
+  .input-top-right {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    span {
+      font-size: 25px;
+      padding: 0px 0 20px 0;
+    }
+    .item {
+      padding-left: 10px;
+    }
+  }
 }

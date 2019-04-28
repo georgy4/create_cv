@@ -1,11 +1,12 @@
 - var title = 'Создать Резюме'
+include includes/variables_links
 doctype html
 html
   include includes/head
   body
     include includes/index_header
-    main.main
+    main.main#swup.transition-fade
       include includes/index_page_content
     include includes/footer
-    script(src="swup.js")
-    script const swup = new Swup();
+    //- script(src="scripts/swup.js")
+    //- script const swup = new Swup();

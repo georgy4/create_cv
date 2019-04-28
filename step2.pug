@@ -1,12 +1,13 @@
 - var title = 'Вторая страница'
+include includes/variables_links
 doctype html
 html
   include includes/head
   body
     include includes/2step_header
-    main.main
-      .container#swup.transition-fade
-        p comon evrybody
-        a(href="/index.html")
+    main.main#swup.transition-fade
+      include includes/2step_main_content        
     include includes/footer
+    script(src="scripts/login.js")
+    script(src="scripts/usersData.js")
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Заполнить резюме</title>
+    <link rel="stylesheet" href="styles.css"><link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container"><a class="logo" href="index.html">СоздатьРезюме.рф</a>
+        <div class="header-right transition-fade" id="swup">
+          <div class="user"><img class="angle" src="img/angle.png" alt=""><a class="name">Игорь Петров</a>
+            <ul class="profile_menu">
+              <li> <a href="">Профиль<img src="img/user.png" alt=""></a></li>
+              <li> <a href="">Мои резюме<img src="img/notepad.png" alt=""></a></li>
+              <li> <a href="">Настройки<img src="img/settings.png" alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="transition-fade main-fill" id="swup">
+      <div class="container flex-start">
+        <div class="main-top-container">
+          <div class="input-photo">
+            <label for="upload-photo">Выберите фото</label>
+            <input class="button-photo" id="upload-photo" type="file" name="">
+          </div>
+          <div class="input-top-right"><span>Игорь Петров</span>
+            <div class="item">
+              <label for="date">Дата рождения:</label>
+              <input class="input-redact" id="date" type="date" name="">
+            </div>
+            <div class="item">
+              <label for="salary">Желаемая зарплата:</label>
+              <input class="input-redact" id="salary" type="text" name="" placeholder="50 000">
+            </div>
+            <div class="item">
+              <label for="grafik">Желаемый график работы:</label>
+              <select class="input-redact" id="grafik" name="">
+                <option value="Не имеет значения" selected>Не имеет значения</option>
+                <option value="Полный рабочий день">Полный рабочий день</option>
+                <option value="Не полный рабочий день">Не полный рабочий день</option>
+                <option value="Свободный график">Свободный график</option>
+              </select>
+            </div>
+            <div class="item">
+              <label for="zanatost">Занятость:</label>
+              <select class="input-redact" id="zanatost" name="">
+                <option value="Не имеет значения" selected>Не имеет значения</option>
+                <option value="Полная занятость">Полная занятость</option>
+                <option value="Частичная занятость">Частичная занятость</option>
+                <option value="Удаленная работа">Удаленная работа</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+  </body>
+</html>
