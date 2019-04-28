@@ -49,7 +49,7 @@ signInButton.addEventListener('click', function(){
   // Check the value and go to the next page
   setTimeout(function(){
     document.querySelector('.button-sign-in').addEventListener('click', function(){
-      window.open("step3.html", "_self");
+      window.open("/step3.html", "_self");
     });
   }, 500);
 
