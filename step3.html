@@ -7,7 +7,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="container"><a class="logo" href="/index.html">СоздатьРезюме.рф</a>
+      <div class="container"><a class="logo" href="index.html">СоздатьРезюме.рф</a>
         <div class="header-right transition-fade" id="swup">
           <div class="user"><img class="angle" src="img/angle.png" alt=""><a class="name">Игорь Петров</a>
             <ul class="profile_menu">
@@ -21,22 +21,91 @@
     </header>
     <main class="main-fill">
       <div class="container flex-start">
-        <div class="main-top-container">
-          <div class="input-photo">
-            <label for="upload-photo">Выберите фото</label>
-            <input class="button-photo" id="upload-photo" type="file" name="">
+        <div class="left-column shadow">
+          <div class="main-top-container">
+            <div class="input-photo">
+              <label for="upload-photo">Выберите фото</label>
+              <input class="button-photo" id="upload-photo" type="file" name="">
+            </div>
+            <div class="input-top-right"><span>Игорь Петров</span>
+              <div class="item">
+                <label for="date">Дата рождения:</label>
+                <input class="input-redact" id="date" type="date" name="" required>
+              </div>
+              <div class="item">
+                <label for="city">Город:</label>
+                <input class="input-redact" id="city" type="text" name="" placeholder="Санкт-Петербург" required>
+              </div>
+              <div class="item">
+                <label for="email">e-mail:</label>
+                <input class="input-redact" id="email" type="email" name="" placeholder="mail@mail.ru" required>
+              </div>
+              <div class="item">
+                <label for="tel">Номер телефона:</label>
+                <input class="input-redact" id="tel" type="tel" name="" placeholder="+7(999)999-99-99" required maxlength="14">
+              </div>
+            </div>
           </div>
-          <div class="input-top-right"><span>Игорь Петров</span>
+          <div class="main-bottom-container">
             <div class="item">
-              <label for="date">Дата рождения:</label>
-              <input class="input-redact" id="date" type="date" name="">
+              <label for="vacancy">Желаемая должность:</label>
+              <input class="input-redact fit-content" id="vacancy" type="text" name="">
+            </div>
+            <div class="item" style="padding:10px 0;">Есть ли у вас опыт работы?<br></div>
+            <div class="item">
+              <input id="experience-radio-no" type="radio" name="experience" checked onclick="var work = document.querySelector('.work-experience'); work.style.display='none';">
+              <label class="radio-label" for="experience-radio-no">Нет</label>
+            </div>
+            <div class="item">
+              <input id="experience-radio-yes" type="radio" name="experience" onclick="var work = document.querySelector('.work-experience'); work.style.display='block';">
+              <label class="radio-label" for="experience-radio-yes">Да</label>
+            </div>
+            <div class="work-experience">
+              <div class="experience-inner">
+                <template>
+                  <div class="experience-item">
+                    <div class="item">
+                      <label for="company">Название организации:</label>
+                      <input class="input-redact fit-content" id="company" type="text" name="company">
+                    </div>
+                    <div class="item">
+                      <label for="position">Должность: </label>
+                      <input class="input-redact fit-content" id="position" type="text" name="company">
+                    </div>
+                    <div class="item">
+                      <label for="continuance">Продолжительность работы: с</label>
+                      <input class="input-month" id="continuance" type="month" name=""><br>
+                      <label for="continuance">по:</label>
+                      <input class="input-month" id="continuance" type="month" name="">
+                    </div>
+                  </div>
+                </template>
+                <div class="experience-item">
+                  <div class="item">
+                    <label for="company">Название организации:</label>
+                    <input class="input-redact fit-content" id="company" type="text" name="company">
+                  </div>
+                  <div class="item">
+                    <label for="position">Должность: </label>
+                    <input class="input-redact fit-content" id="position" type="text" name="company">
+                  </div>
+                  <div class="item">
+                    <label for="continuance">Продолжительность работы: с</label>
+                    <input class="input-month" id="continuance" type="month" name=""><br>
+                    <label for="continuance">по:</label>
+                    <input class="input-month" id="continuance" type="month" name="">
+                  </div>
+                </div>
+              </div>
+              <div class="item add-work-experience">добавить место работы +</div>
             </div>
             <div class="item">
               <label for="salary">Желаемая зарплата:</label>
-              <input class="input-redact" id="salary" type="text" name="" placeholder="50 000">
+              <input class="input-redact" id="salary" type="text" name="" placeholder="50 000" required>
+              <label for="salary">рублей</label>
             </div>
             <div class="item">
-              <label for="grafik">Желаемый график работы:</label>
+              <label class="input-select" for="grafik">Желаемый график работы:</label>
               <select class="input-redact" id="grafik" name="">
                 <option value="Не имеет значения" selected>Не имеет значения</option>
                 <option value="Полный рабочий день">Полный рабочий день</option>
@@ -45,17 +114,28 @@
               </select>
             </div>
             <div class="item">
-              <label for="zanatost">Занятость:</label>
-              <select class="input-redact" id="zanatost" name="">
+              <label class="input-select" for="zanatost">Занятость:</label>
+              <select class="input-redact input-select" id="zanatost" name="">
                 <option value="Не имеет значения" selected>Не имеет значения</option>
                 <option value="Полная занятость">Полная занятость</option>
                 <option value="Частичная занятость">Частичная занятость</option>
                 <option value="Удаленная работа">Удаленная работа</option>
               </select>
             </div>
+            <div class="item">
+              <label for="about-me">О себе:</label>
+              <textarea id="about-me" name="" cols="" rows="10"></textarea>
+            </div>
+            <button class="button completed-cv">Скачать резюме</button>
           </div>
         </div>
+        <div class="right-column shadow">
+          <h2 class="advices"> <a class="underline">Подборка полезных статей</a></h2><span class="title"> <a>Как попросить прибавку</a></span><span class="title"> <a>Куда смотреть когда врешь на собеседовании</a></span><span class="title"> <a>10 идей как продать эту ручку</a></span><span class="title"> <a>Свежая подборка анекдотов для бухгалтеров</a></span><span class="title"> <a>Гороскоп. Кем вы будете через 5 лет в нашей компании?</a></span><span class="title"> <a>Как рассказать немного о себе так, чтобы вышло больше пары слов</a></span><span class="title"><a>еще..</a></span>
+        </div>
       </div>
+      <script src="scripts/inputLength.js"></script>
+      <script src="scripts/validation.js"></script>
+      <script src="scripts/addWork.js"></script>
     </main>
     <footer class="footer"></footer>
   </body>

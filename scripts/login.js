@@ -42,14 +42,14 @@ loginButton.addEventListener('click', function(){
 // To signIn
 signInButton.addEventListener('click', function(){
 
-  var signInTemplate = '<div class="login-area">  <input class="input" type="text" name="name" id="name" placeholder="Иван">  <label for="name">Имя</label><br>  <input class="input" type="text" name="second_name" id="second_name" placeholder="Иванов">  <label for="second_name">Фамилия</label><br>  <input class="input" type="email" name="email" id="email" placeholder="mail@mail.ru">  <label for="email">Адрес электронной почты</label><br>  <input class="input" type="password" name="password" id="password" placeholder="*******">  <label for="pasword">Придумайте пароль</label><br>  <input class="input" type="text" name="city" id="city" placeholder="Санкт-Петербург">  <label for="city">Город</label>  <button class="button button-sign-in" type="submit">Зарегистрироваться</button></div>';
+  var signInTemplate = '<div class="login-area">  <input class="input input-name" type="text" name="name" id="name" placeholder="Иван">  <label for="name">Имя</label><br>  <input class="input" type="text" name="second_name" id="second_name" placeholder="Иванов">  <label for="second_name">Фамилия</label><br>  <input class="input" type="email" name="email" id="email" placeholder="mail@mail.ru">  <label for="email">Адрес электронной почты</label><br>  <input class="input" type="password" name="password" id="password" placeholder="*******">  <label for="pasword">Придумайте пароль</label><br>  <input class="input" type="text" name="city" id="city" placeholder="Санкт-Петербург">  <label for="city">Город</label>  <button class="button button-sign-in" type="submit">Зарегистрироваться</button></div>';
 
   changeOpacity(loginPage, signInTemplate);
 
   // Check the value and go to the next page
   setTimeout(function(){
     document.querySelector('.button-sign-in').addEventListener('click', function(){
-      window.open("/step3.html", "_self");
+      window.open("step3.html", "_self");
     });
   }, 500);
 

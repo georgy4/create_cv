@@ -1,28 +1,116 @@
 .container.flex-start
-  .main-top-container
-    .input-photo
-      label(for="upload-photo") Выберите фото
-      input#upload-photo(type="file", name="").button-photo
-    .input-top-right
-      span Игорь Петров
+  .left-column.shadow
+    .main-top-container
+      .input-photo
+        label(for="upload-photo") Выберите фото
+        input#upload-photo(type="file", name="").button-photo
+      .input-top-right
+        span Игорь Петров
+
+        .item
+          label(for="date") Дата рождения:
+          input#date(type="date", name="" required).input-redact
+        
+        .item
+          label(for="city") Город:
+          input#city(type="text", name="" placeholder="Санкт-Петербург" required).input-redact
+        .item
+          label(for="email") e-mail:
+          input#email(type="email", name="" placeholder="mail@mail.ru" required).input-redact
+        .item
+          label(for="tel") Номер телефона:
+          input#tel(type="tel", name="" placeholder="+7(999)999-99-99" required maxlength="14").input-redact
+
+    .main-bottom-container
+      .item
+        label(for="vacancy") Желаемая должность:
+        input#vacancy(type="text", name="").input-redact.fit-content
+      .item(style="padding:10px 0;") Есть ли у вас опыт работы?
+        br
+      .item
+        input#experience-radio-no(type="radio", name="experience" checked onclick = "var work = document.querySelector('.work-experience'); work.style.display='none';")
+        label(for="experience-radio-no").radio-label Нет
+      .item
+        input#experience-radio-yes(type="radio", name="experience" onclick = "var work = document.querySelector('.work-experience'); work.style.display='block';")
+        label(for="experience-radio-yes").radio-label Да
+
+      .work-experience
+        .experience-inner
+          template
+            .experience-item
+              .item
+                label(for="company") Название организации:
+                input#company(type="text", name="company").input-redact.fit-content
+              .item
+                label(for="position") Должность: 
+                input#position(type="text", name="company").input-redact.fit-content
+              .item
+                label(for="continuance") Продолжительность работы: с
+                input#continuance(type="month", name="").input-month
+                br
+                label(for="continuance") по:
+                input#continuance(type="month", name="").input-month
+
+          .experience-item
+            .item
+              label(for="company") Название организации:
+              input#company(type="text", name="company").input-redact.fit-content
+            .item
+              label(for="position") Должность: 
+              input#position(type="text", name="company").input-redact.fit-content
+            .item
+              label(for="continuance") Продолжительность работы: с
+              input#continuance(type="month", name="").input-month
+              br
+              label(for="continuance") по:
+              input#continuance(type="month", name="").input-month
+
+        .item.add-work-experience добавить место работы +
+
 
       .item
-        label(for="date") Дата рождения:
-        input#date(type="date", name="").input-redact
-      .item
         label(for="salary") Желаемая зарплата:
-        input#salary(type="text", name="" placeholder="50 000").input-redact
+        input#salary(type="text", name="" placeholder="50 000" required).input-redact
+        label(for="salary") рублей
       .item
-        label(for="grafik") Желаемый график работы:
+        label(for="grafik").input-select Желаемый график работы:
         select#grafik(name="").input-redact
           option(value="Не имеет значения" selected) Не имеет значения
           option(value="Полный рабочий день") Полный рабочий день
           option(value="Не полный рабочий день") Не полный рабочий день
           option(value="Свободный график") Свободный график
       .item
-        label(for="zanatost") Занятость:
-        select#zanatost(name="").input-redact
+        label(for="zanatost").input-select Занятость:
+        select#zanatost(name="").input-redact.input-select
           option(value="Не имеет значения" selected) Не имеет значения
           option(value="Полная занятость") Полная занятость
           option(value="Частичная занятость") Частичная занятость
           option(value="Удаленная работа") Удаленная работа
+
+      .item
+        label(for="about-me") О себе:
+        textarea#about-me(name="", cols="", rows="10")
+
+      button.button.completed-cv Скачать резюме
+
+  .right-column.shadow
+    h2.advices 
+      a.underline Подборка полезных статей
+
+    span.title 
+      a Как попросить прибавку
+    span.title 
+      a Куда смотреть когда врешь на собеседовании
+    span.title 
+      a 10 идей как продать эту ручку
+    span.title 
+      a Свежая подборка анекдотов для бухгалтеров
+    span.title 
+      a Гороскоп. Кем вы будете через 5 лет в нашей компании?
+    span.title 
+      a Как рассказать немного о себе так, чтобы вышло больше пары слов
+    span.title
+      a еще..
+script(src="scripts/inputLength.js")
+script(src="scripts/validation.js")
+script(src="scripts/addWork.js")
