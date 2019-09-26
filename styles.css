@@ -496,14 +496,22 @@ textarea {
 .underline:hover {
   text-decoration: underline; }
 
+.profile-pic {
+  display: none; }
+
 @media (max-width: 500px) {
+  .button {
+    letter-spacing: normal; }
   .start-header {
     display: none; }
   .container {
     padding: 0 20px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
   .header .container {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
@@ -573,7 +581,7 @@ textarea {
         align-items: center;
         font-family: 'Ubuntu', sans-serif;
         padding: 10px 20px;
-        letter-spacing: 1px;
+        letter-spacing: normal;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
