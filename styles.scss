@@ -83,6 +83,9 @@ a {
   .header-description {
     font-size: 14px;
     margin: 0 20px;
+    @media (max-width:700px) {
+      display:none;
+    }
   }
   .border {
     display: block;
@@ -90,6 +93,9 @@ a {
     height: 17px;
     background-color: $lighten-black;
     border-radius: 9px;
+    @media (max-width:700px) {
+      display:none;
+    }
   }
   .start-header {
     width: 140px;
@@ -106,6 +112,29 @@ a {
 }
 
 .button {
+  @include flex();
+  @include logo-font();
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  justify-content: center;
+  border: none;
+  outline:none;
+  box-shadow: none;
+  background: $red;
+  border-radius: 15px;
+  color: $white;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten($red,5%);
+    
+  }
+  &:active {
+    background-color: darken($red, 5%);
+  }
+}
+
+@mixin button {
   @include flex();
   @include logo-font();
   padding: 10px 20px;
@@ -211,6 +240,7 @@ select:focus {
   flex-grow: 1;
   background-color: $background;
   overflow: scroll;
+  scroll-behavior: smooth;
 }
 
 .user {
@@ -391,6 +421,9 @@ a.name {
   max-width: 310px;
   padding: 10px 20px;
   margin-left: 30px;
+  @media (max-width: 1000px) {
+    display: none;    
+  }
   .advices{
     font-size: 20px;
   }
@@ -486,4 +519,94 @@ textarea {
 
 .underline:hover {
   text-decoration: underline;
+}
+
+@media (max-width:500px) {
+  .start-header {
+    display: none;
+  }
+  .container {
+    padding: 0 20px;
+    justify-content: center;
+  }
+  .header .container {justify-content: space-between}
+  .main {
+    background-size: cover;
+    background-position: center;
+    .main-inner {
+    // background-color: white;
+    align-items: center;
+    text-align: center;
+    background: rgba(226, 225, 225, 0.61);
+    border: 3px solid rgb(2, 2, 2);
+    padding: 40px 10px;
+    } 
+  }
+  .login-page .login-area {
+    background: rgba(255, 255, 255, 0.685);
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    label {
+      margin: 0px;
+    }
+  }
+
+  .flex-start {
+    justify-content: center;
+  }
+
+  .user {
+    img,a {display:none}
+    .profile-pic {
+      display:block;
+      height: 30px;
+    }
+  }
+
+  .main-top-container {
+    flex-direction: column;
+    height: auto;
+    span {display: none;}
+    .input-photo {
+      flex-direction: column;
+      border: none;
+      label {
+        @include button();
+        text-decoration: none;
+        font-size: 15px;
+      }
+    }
+    .input-top-right {
+      flex-direction: column;
+      .item {
+        padding: 5px 0;
+        display:flex;
+        flex-direction: column;
+        
+      }
+    }
+  }
+  .main-bottom-container {
+    display:flex;
+    flex-direction: column;
+    .item {
+      padding: 5px 0;
+      .input-select{
+        &::before {
+          display:none;
+        }
+      }
+      select {width: 100%;}
+    }
+  }
+  .experience-item {
+    padding: 5px;
+    input {
+      margin: 5px;
+    }
+  }
 }
